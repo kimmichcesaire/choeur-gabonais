@@ -1,0 +1,8 @@
+# Environnement local — NE JAMAIS committer
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Build
+dist/

@@ -1,0 +1,9 @@
+node_modules
+dist
+*.log
+
+# Fichiers d'environnement — NE JAMAIS committer
+.env
+.env.*
+!.env.example
+!.env.test

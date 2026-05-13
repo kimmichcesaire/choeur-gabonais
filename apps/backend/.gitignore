@@ -1,0 +1,9 @@
+# Environnement local — NE JAMAIS committer
+# ATTENTION : SUPABASE_SERVICE_ROLE_KEY et RESEND_API_KEY sont ici !
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Build
+dist/
