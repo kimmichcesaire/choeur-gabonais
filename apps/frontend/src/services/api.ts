@@ -73,7 +73,7 @@ async function post<T>(path: string, body: unknown): Promise<T> {
       )
     }
 
-    let errorMsg = FORM_MESSAGES.errors.generic
+    let errorMsg: string = FORM_MESSAGES.errors.generic
     try {
       const json = await res.json() as ApiError
       const extractedMsg = extractErrorMessage(json)

@@ -110,7 +110,7 @@ export const supabaseService = {
         try {
             const { data: result, error } = await supabase
                 .from(table)
-                .insert(data)
+                .insert(data as Record<string, unknown>)
                 .select()
                 .single()
 
