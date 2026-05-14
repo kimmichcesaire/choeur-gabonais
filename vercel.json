@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm run build -w packages/shared && npm run build -w apps/frontend",
+  "buildCommand": "npm run build -w apps/frontend",
   "outputDirectory": "apps/frontend/dist",
   "installCommand": "npm install",
   "framework": "vite",
