@@ -71,7 +71,7 @@ export default function HomePage() {
           <div className="about-img-wrap">
             <video
               className="about-img"
-              src="/video.mp4"
+              src="/A_la_decouverte_d_un_membre_du_cgdf.mp4"
               controls
               muted
               playsInline
@@ -85,11 +85,11 @@ export default function HomePage() {
             </div>
           </div>
           <div className="about-text">
-            <div className="section-tag">Notre histoire</div>
+            <div className="section-tag">Mbolo - Samba</div>
             <h2>
               Une voix gabonaise
               <br />
-              au cœur de Paris
+              au cœur de la France
             </h2>
             <p>
               Le Chœur Gabonais de France est une association culturelle et
@@ -119,7 +119,7 @@ export default function HomePage() {
           <div className="section-tag">Agenda</div>
           <h2>Prochains événements</h2>
           <p>
-            Retrouvez-nous lors de nos concerts, répétitions ouvertes et soirées
+            Retrouvez-nous lors de nos prestations, répétitions ouvertes et soirées
             culturelles.
           </p>
         </div>

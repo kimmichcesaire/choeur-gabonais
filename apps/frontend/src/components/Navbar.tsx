@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useAppStore } from '../store/useAppStore'
-import Photo_Principale from '../assets/Photo_principale.jpg'
 
 const LINKS = [
   { to: '/', label: 'Accueil' },
@@ -33,8 +32,8 @@ export default function Navbar() {
     <>
       <nav className="navbar">
         <NavLink to="/" className="navbar-Photo_principale" onClick={closeNav}>
+          <img src="/logo.jpg" alt="Logo Chœur Gabonais" className="navbar-logo-img" />
           <div className="flag-bar" />
-          <img src={Photo_Principale} alt="Chœur Gabonais de France" height={95} />
         </NavLink>
 
         {/* Liens desktop */}

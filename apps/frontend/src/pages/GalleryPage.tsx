@@ -44,7 +44,7 @@ export default function GalleryPage() {
                 </div>
               ))}
               {!loadingAlbums && albums.length === 0 && (
-                <div className="empty"><p>Aucun album disponible.</p></div>
+                <div className="empty"></div>
               )}
             </div>
           </>
@@ -63,7 +63,7 @@ export default function GalleryPage() {
                 </div>
               ))}
               {!loadingPhotos && photos.length === 0 && (
-                <div className="empty"><p>Aucune photo dans cet album.</p></div>
+                <div className="empty"></div>
               )}
             </div>
           </>

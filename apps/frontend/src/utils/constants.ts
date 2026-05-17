@@ -14,13 +14,17 @@ export const SITE_CONFIG = {
             endTime: '18h',
         },
     },
+    social: {
+        youtube: 'https://www.youtube.com/@choeurgabonaisfrance9523',
+        instagram: 'https://www.instagram.com/choeur_gabonais_de_france',
+        facebook: 'https://www.facebook.com/people/Choeur-Gabonais-de-France/100051156166946/?sk=photos',
+    },
 } as const
 
 export const STATS = [
     { number: '30', label: 'Choristes' },
     { number: '6', label: "Ans d'existence" },
-    { number: '1', label: 'Concerts donnés' },
-    { number: '1', label: 'Répertoires' },
+    { number: '35', label: 'Prestations' },
 ] as const
 
 export const VALUES = [

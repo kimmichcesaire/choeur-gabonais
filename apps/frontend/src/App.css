@@ -82,12 +82,19 @@ main {
 }
 
 .flag-bar {
-  width: 6px;
-  height: 60px;
-  border-radius: 3px;
+  width: 200px;
+  height: 80px;
+  border-radius: 4px;
   background: linear-gradient(to bottom, var(--green) 33%, var(--yellow) 33% 66%, var(--blue) 66%);
   flex-shrink: 0;
   align-self: center;
+}
+
+.navbar-logo-img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 6px;
 }
 
 .navbar-logo span {
@@ -268,11 +275,11 @@ main {
     #004d2e,
     var(--green),
     var(--yellow),
-    #0f1923,
-    #1a2e44,
+    #0d62b6,
+    #025dbe,
     var(--blue),
     var(--yellow),
-    #1f3a7a,
+    #111a2f,
     #004d2e
   );
   background-size: 400% 400%;
@@ -329,9 +336,9 @@ main {
 }
 
 .flag-stripe {
-  width: 40px;
-  height: 6px;
-  border-radius: 3px;
+  width: 60px;
+  height: 10px;
+  border-radius: 4px;
 }
 
 .hero-badge {
@@ -697,6 +704,8 @@ section {
   border-color: var(--green);
 }
 
+
+
 /* ═══════════════════════════════════════════════
    PAGE HERO (inner pages)
 ═══════════════════════════════════════════════ */
@@ -713,11 +722,21 @@ section {
   margin-bottom: 12px;
 }
 
+.page-hero h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
 .page-hero p {
   color: rgba(255, 255, 255, .7);
   font-size: 1.05rem;
   max-width: 540px;
   margin: 0 auto;
+  line-height: 1.7;
+  text-align: center;
 }
 
 .page-hero-about {
@@ -851,6 +870,29 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.video-thumb iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-thumb.portrait-video {
+  aspect-ratio: unset;
+  height: auto;
+  background: #000;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.video-thumb.portrait-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: unset;
 }
 
 .play-btn {
@@ -1277,6 +1319,40 @@ section {
   font-size: .82rem;
 }
 
+.footer-social {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: #fff;
+  transition: transform .2s, opacity .2s;
+}
+
+.footer-social a:hover {
+  transform: scale(1.1);
+  opacity: .9;
+}
+
+.footer-social a[aria-label="YouTube"] {
+  background: #FF0000;
+}
+
+.footer-social a[aria-label="Instagram"] {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.footer-social a[aria-label="Facebook"] {
+  background: #1877F2;
+}
+
 /* ═══════════════════════════════════════════════
    UTILITIES
 ═══════════════════════════════════════════════ */
@@ -1344,6 +1420,11 @@ section {
   /* Logo hero : plus grand sur petite tablette */
   .hero::before {
     background-size: 78% auto;
+  }
+
+  .hero {
+    background-size: 400% 400%;
+    animation: gradientShift 14s ease infinite;
   }
 
   /* Navbar: hamburger visible, liens cachés */
@@ -1478,6 +1559,8 @@ section {
   /* Hero */
   .hero {
     padding: 88px var(--px) 48px;
+    background-size: 400% 400%;
+    animation: gradientShift 14s ease infinite;
   }
 
   /* Stats: colonne unique */
@@ -1572,7 +1655,7 @@ section {
 
   /* Flags hero plus petits */
   .flag-stripe {
-    width: 28px;
+    width: 42px;
   }
 }
 

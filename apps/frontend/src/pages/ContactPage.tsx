@@ -104,7 +104,7 @@ function ContactForm() {
           required
           value={form.values.full_name}
           onChange={form.setField('full_name')}
-          placeholder="Kimmich Cesaire"
+          placeholder="Nom complet"
         />
       </div>
       <div className="form-group">

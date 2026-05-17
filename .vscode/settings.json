@@ -1,3 +1,6 @@
 {
-    "workbench.browser.openLocalhostLinks": false
+    "workbench.browser.openLocalhostLinks": false,
+    "deno.path": "C:\\Users\\hp\\.deno\\bin\\deno.exe",
+    "deno.enablePaths": ["supabase/functions"],
+    "deno.importMap": "./supabase/functions/import_map.json"
 }

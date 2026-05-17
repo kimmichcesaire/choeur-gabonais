@@ -26,8 +26,20 @@ export default function EventsPage() {
         <div className="section-tag">Agenda</div>
         <h1>Nos événements</h1>
         <p>
-          Concerts, répétitions ouvertes et soirées culturelles du Chœur Gabonais
+          Prestations, répétitions ouvertes et soirées culturelles du Chœur Gabonais
           de France.
+        </p> <br /><br />
+        <h2>Prestations Normales</h2>
+        <p>
+           Plus de 20 messes exécutées <br />
+           Plus de de 10 mariages animés <br />
+           Plus de de 2 prestations concerts <br />
+        </p><br /><br />
+        <h2>Prestations Spécials</h2>
+        <p>
+          Cérémonie à l’ambassade du Gabon <br />
+          Soirée de Gala Miss/Mister Gabon-France <br />
+          Release party d’Iboga Green <br />
         </p>
       </div>
 

@@ -55,18 +55,37 @@ export default function AboutPage() {
           <div className="section-tag">Qui sommes-nous</div>
           <h2>Notre histoire</h2>
           <p>
-            Fondé en 2020, le Chœur Gabonais de France réunit des choristes
-            passionnés par la musique gabonaise et africaine. Notre mission :
-            promouvoir la richesse musicale et culturelle du Gabon en France, à
-            travers des concerts, des ateliers et des collaborations artistiques.
+            Le Choeur Gabonais de France (CGDF), est une association a but non lucratif régie par la loi du 1er Juillet 1901 et le décret du 16 aout de la même année. Fondée le 15 mai 2020, le Choeur Gabonaisde France a pour objectif de promouvoir la culture gabonaise par le chant choral.
+            <br />A travers l’interprétation de chants issus de styles musicaux variés, les membres du CGDF souhaitent transporter le public dans un univers rythmé aux influences gabonaises en particulier et africaines engénéral.
+          </p> <br /> <br /><br />
+
+          <h2>Nos valeurs</h2>
+          <p>
+            Partage <br />
+            Amour <br />
+            Diversité et
+            faire découvrir la culture
+            musique gabonaise <br />
+            Représenter valablement
+            le Gabon en France
           </p>
         </div>
       </section>
 
       <section>
         <div className="section-header">
-          <div className="section-tag">L'équipe</div>
-          <h2>Les membres</h2>
+          <div className="section-tag">Objectif</div>
+          <h2>Nos missions</h2>
+          <p>
+            Le Choeur Gabonais de
+            France a pour mission
+            de célébrer et
+            promouvoir la richesse
+            de la musique
+            gabonaise et est la voix
+            vivante de la culture
+            gabonaise en France
+          </p>
         </div>
 
         {loading && <div className="loader">Chargement…</div>}
