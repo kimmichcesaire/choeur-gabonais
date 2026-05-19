@@ -53,9 +53,7 @@ export default function MediaPage() {
           <div className="media-grid">
             {STATIC_VIDEOS.map((v) => (
               <div className="media-card" key={v.src}>
-                <div className="video-thumb portrait-video">
-                  <video src={v.src} controls playsInline />
-                </div>
+                <video className="media-file-video" src={v.src} controls playsInline />
                 <div className="media-card-info">
                   <h3>{v.title}</h3>
                 </div>
@@ -71,40 +69,42 @@ export default function MediaPage() {
             ) : media.map((m) => {
               if (m.type === 'video') {
                 const vid = getYoutubeId(m.url)
-                const isMp4 = m.url.endsWith('.mp4') || m.url.includes('.mp4')
+                const isMp4 = m.url.endsWith('.mp4') || m.url.includes('.mp4') || m.url.includes('supabase')
                 return (
                   <div className="media-card" key={m.id}>
-                    <div className="video-thumb">
-                      {isMp4 ? (
-                        <video
-                          src={m.url}
-                          controls
-                          playsInline
-                          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                        />
-                      ) : playingId === m.id && vid ? (
-                        <iframe
-                          src={`https://www.youtube.com/embed/${vid}?autoplay=1`}
-                          title={m.title}
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        />
-                      ) : (
-                        <>
-                          {m.thumbnail_url
-                            ? <img src={m.thumbnail_url} alt={m.title} />
-                            : vid && <img src={`https://img.youtube.com/vi/${vid}/hqdefault.jpg`} alt={m.title} />
-                          }
-                          {vid && (
-                            <button
-                              className="play-btn"
-                              onClick={() => setPlayingId(m.id)}
-                              aria-label={`Lire ${m.title}`}
-                            >▶</button>
-                          )}
-                        </>
-                      )}
-                    </div>
+                    {isMp4 ? (
+                      <video
+                        className="media-file-video"
+                        src={m.url}
+                        controls
+                        playsInline
+                      />
+                    ) : (
+                      <div className="video-thumb">
+                        {playingId === m.id && vid ? (
+                          <iframe
+                            src={`https://www.youtube.com/embed/${vid}?autoplay=1`}
+                            title={m.title}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          />
+                        ) : (
+                          <>
+                            {m.thumbnail_url
+                              ? <img src={m.thumbnail_url} alt={m.title} />
+                              : vid && <img src={`https://img.youtube.com/vi/${vid}/hqdefault.jpg`} alt={m.title} />
+                            }
+                            {vid && (
+                              <button
+                                className="play-btn"
+                                onClick={() => setPlayingId(m.id)}
+                                aria-label={`Lire ${m.title}`}
+                              >▶</button>
+                            )}
+                          </>
+                        )}
+                      </div>
+                    )}
                     <div className="media-card-info">
                       <h3>{m.title}</h3>
                       {m.description && <p>{m.description}</p>}

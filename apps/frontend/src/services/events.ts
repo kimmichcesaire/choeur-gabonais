@@ -27,4 +27,15 @@ export const eventService = {
     if (error) throw error
     return data
   },
+
+  async update(id: string, dto: Partial<CreateEventDto & { is_past: boolean }>): Promise<Event> {
+    const { data, error } = await supabase.from('events').update(dto).eq('id', id).select().single()
+    if (error) throw error
+    return data
+  },
+
+  async delete(id: string): Promise<void> {
+    const { error } = await supabase.from('events').delete().eq('id', id)
+    if (error) throw error
+  },
 }

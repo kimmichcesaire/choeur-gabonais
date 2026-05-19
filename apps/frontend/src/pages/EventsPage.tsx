@@ -35,7 +35,7 @@ export default function EventsPage() {
            Plus de de 10 mariages animés <br />
            Plus de de 2 prestations concerts <br />
         </p><br /><br />
-        <h2>Prestations Spécials</h2>
+        <h2>Prestations Spéciales</h2>
         <p>
           Cérémonie à l’ambassade du Gabon <br />
           Soirée de Gala Miss/Mister Gabon-France <br />
