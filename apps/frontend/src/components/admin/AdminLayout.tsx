@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { supabase } from '../../services/supabase'
 
@@ -10,15 +11,31 @@ const NAV = [
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const navigate = useNavigate()
+  const [menuOpen, setMenuOpen] = useState(false)
 
   const handleLogout = async () => {
     await supabase.auth.signOut()
     navigate('/admin/login')
   }
 
+  const closeMenu = () => setMenuOpen(false)
+
   return (
     <div className="admin-layout">
-      <aside className="admin-sidebar">
+      <header className="admin-mobile-header">
+        <button
+          className="admin-hamburger"
+          onClick={() => setMenuOpen(o => !o)}
+          aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+        >
+          {menuOpen ? '✕' : '☰'}
+        </button>
+        <span className="admin-mobile-title">Admin CGdF</span>
+      </header>
+
+      {menuOpen && <div className="admin-overlay" onClick={closeMenu} />}
+
+      <aside className={`admin-sidebar${menuOpen ? ' open' : ''}`}>
         <div className="admin-sidebar-logo">
           <div className="flag-bar" />
           <span>Admin CGdF</span>
@@ -30,6 +47,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               to={to}
               end={end}
               className={({ isActive }) => `admin-nav-link${isActive ? ' active' : ''}`}
+              onClick={closeMenu}
             >
               {label}
             </NavLink>
@@ -39,6 +57,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           🚪 Déconnexion
         </button>
       </aside>
+
       <main className="admin-main">
         {children}
       </main>
