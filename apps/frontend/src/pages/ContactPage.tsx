@@ -171,7 +171,6 @@ function CandidatureForm() {
     { value: 'alto', label: 'Alto' },
     { value: 'tenor', label: 'Ténor' },
     { value: 'basse', label: 'Basse' },
-    { value: 'autre', label: 'Autre' },
   ]
 
   if (form.isSuccess) {
@@ -218,13 +217,13 @@ function CandidatureForm() {
         />
       </div>
       <div className="form-group">
-        <label>Tessiture *</label>
+        <label>Pupitre *</label>
         <select
           required
           value={form.values.voice_type ?? ''}
           onChange={form.setField('voice_type')}
         >
-          <option value="">Sélectionnez votre tessiture</option>
+          <option value="">Sélectionnez votre Pupitre</option>
           {voiceTypes.map((vt) => (
             <option key={vt.value} value={vt.value}>
               {vt.label}

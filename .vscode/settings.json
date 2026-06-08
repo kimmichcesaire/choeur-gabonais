@@ -2,5 +2,7 @@
     "workbench.browser.openLocalhostLinks": false,
     "deno.path": "C:\\Users\\hp\\.deno\\bin\\deno.exe",
     "deno.enablePaths": ["supabase/functions"],
-    "deno.importMap": "./supabase/functions/import_map.json"
+    "deno.importMap": "./supabase/functions/import_map.json",
+    "snyk.advanced.organization": "ec3185e4-19ff-4812-acce-de5764cbf4a0",
+    "snyk.advanced.autoSelectOrganization": true
 }
