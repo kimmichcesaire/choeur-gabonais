@@ -51,10 +51,8 @@ export default function ContactPage() {
             <div className="info-row">
               <span className="info-icon">🕐</span>
               <span>
-                Répétitions chaque {SITE_CONFIG.contact.rehearsal.day}
-                <br />
-                de {SITE_CONFIG.contact.rehearsal.startTime} à{' '}
-                {SITE_CONFIG.contact.rehearsal.endTime}
+                Répétition un week-end tous les trois (3) mois 
+               
               </span>
             </div>
             <div className="info-row">
