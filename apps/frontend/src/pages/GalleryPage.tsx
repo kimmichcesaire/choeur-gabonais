@@ -1,8 +1,13 @@
 import { useState } from 'react'
 import { useAlbums, usePhotos } from '../hooks/useGallery'
+import { usePageMeta } from '../hooks/usePageMeta'
 import type { GalleryAlbum } from '@choeur/shared'
 
 export default function GalleryPage() {
+  usePageMeta(
+    'Galerie photos — Chœur Gabonais de France',
+    'Photos des concerts et événements du Chœur Gabonais de France — revivez les moments forts en images.',
+  )
   const [selected, setSelected] = useState<GalleryAlbum | null>(null)
   const { albums, loading: loadingAlbums } = useAlbums()
   const { photos, loading: loadingPhotos } = usePhotos(selected?.id ?? null)

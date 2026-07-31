@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useEvents } from '../hooks/useEvents'
+import { usePageMeta } from '../hooks/usePageMeta'
 import { formatters } from '../utils/formatters'
 import { FORM_MESSAGES } from '../utils/constants'
 
@@ -12,6 +13,10 @@ const FILTERS = [
 ] as const
 
 export default function EventsPage() {
+  usePageMeta(
+    'Événements — Chœur Gabonais de France',
+    'Retrouvez tous les événements du Chœur Gabonais de France : messes, mariages, concerts et soirées culturelles à venir ou passés.',
+  )
   const [filter, setFilter] = useState<Filter>('all')
   const { events, loading, error } = useEvents(
     filter === 'upcoming' ? { upcoming: true } : {}

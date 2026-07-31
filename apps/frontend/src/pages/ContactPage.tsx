@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { api } from '../services/api'
 import { useForm } from '../hooks/useForm'
+import { usePageMeta } from '../hooks/usePageMeta'
 import { SITE_CONFIG, FORM_MESSAGES } from '../utils/constants'
 import type { VoiceType, CreateContactDto, CreateApplicationDto } from '@choeur/shared'
 
@@ -28,6 +29,10 @@ function HoneypotField({ value, onChange }: { value: string; onChange: (v: strin
 }
 
 export default function ContactPage() {
+  usePageMeta(
+    'Contact — Chœur Gabonais de France',
+    'Contactez le Chœur Gabonais de France ou déposez votre candidature pour rejoindre le chœur — toutes les voix sont bienvenues.',
+  )
   const [tab, setTab] = useState<FormTab>('contact')
 
   return (

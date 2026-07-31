@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useMedia } from '../hooks/useMedia'
+import { usePageMeta } from '../hooks/usePageMeta'
 import type { MediaType } from '@choeur/shared'
 
 function getYoutubeId(url: string): string | null {
@@ -14,6 +15,10 @@ const STATIC_VIDEOS = [
 ]
 
 export default function MediaPage() {
+  usePageMeta(
+    'Médias — Chœur Gabonais de France',
+    'Vidéos et audios du Chœur Gabonais de France : concerts, répétitions et répertoire traditionnel, contemporain et gospel.',
+  )
   const [tab, setTab] = useState<MediaType>('video')
   const [playingId, setPlayingId] = useState<string | null>(null)
   const { media, loading, error } = useMedia(tab)

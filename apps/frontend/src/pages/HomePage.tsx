@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useEvents } from '../hooks/useEvents'
+import { usePageMeta } from '../hooks/usePageMeta'
 import { useAppStore } from '../store/useAppStore'
 import { formatters } from '../utils/formatters'
 import {
@@ -12,6 +13,10 @@ import {
 } from '../utils/constants'
 
 export default function HomePage() {
+  usePageMeta(
+    'Chœur Gabonais de France — Association culturelle et musicale',
+    'Le Chœur Gabonais de France unit ses voix pour célébrer le patrimoine musical gabonais au cœur de la France. Découvrez nos événements, nos médias et rejoignez-nous.',
+  )
   const { events, loading } = useEvents({ upcoming: true })
   const loadSettings = useAppStore((s) => s.loadSettings)
 

@@ -1,8 +1,13 @@
 import { useState, useEffect } from 'react'
 import type { TeamMember } from '@choeur/shared'
 import { supabaseService, SupabaseServiceError } from '../services/supabaseService'
+import { usePageMeta } from '../hooks/usePageMeta'
 
 export default function AboutPage() {
+  usePageMeta(
+    'À propos — Chœur Gabonais de France',
+    "Découvrez l'histoire, les valeurs et l'équipe du Chœur Gabonais de France, association culturelle fondée en 2020 pour promouvoir la culture gabonaise par le chant choral.",
+  )
   const [team, setTeam] = useState<TeamMember[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
