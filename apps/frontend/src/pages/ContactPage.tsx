@@ -6,6 +6,27 @@ import type { VoiceType, CreateContactDto, CreateApplicationDto } from '@choeur/
 
 type FormTab = 'contact' | 'candidature'
 
+/**
+ * Champ piège invisible pour un humain, irrésistible pour un bot qui remplit
+ * tous les champs d'un formulaire.
+ */
+function HoneypotField({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+  return (
+    <div style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, overflow: 'hidden' }} aria-hidden="true">
+      <label htmlFor="website">Site web</label>
+      <input
+        type="text"
+        id="website"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+      />
+    </div>
+  )
+}
+
 export default function ContactPage() {
   const [tab, setTab] = useState<FormTab>('contact')
 
@@ -70,6 +91,7 @@ export default function ContactPage() {
  * Formulaire de contact
  */
 function ContactForm() {
+  const [honeypot, setHoneypot] = useState('')
   const form = useForm<CreateContactDto>({
     initialValues: {
       full_name: '',
@@ -78,7 +100,8 @@ function ContactForm() {
       message: '',
     },
     onSubmit: async (values) => {
-      await api.submitContact(values)
+      if (honeypot) return
+      await api.submitContact(values, honeypot)
     },
   })
 
@@ -96,6 +119,7 @@ function ContactForm() {
       {form.isError && (
         <div className="form-error">{form.error}</div>
       )}
+      <HoneypotField value={honeypot} onChange={setHoneypot} />
       <div className="form-group">
         <label>Nom complet *</label>
         <input
@@ -147,6 +171,7 @@ function ContactForm() {
  * Formulaire de candidature
  */
 function CandidatureForm() {
+  const [honeypot, setHoneypot] = useState('')
   const form = useForm<CreateApplicationDto>({
     initialValues: {
       full_name: '',
@@ -157,10 +182,11 @@ function CandidatureForm() {
       motivation: '',
     },
     onSubmit: async (values) => {
+      if (honeypot) return
       if (!values.voice_type) {
         throw new Error('Veuillez sélectionner votre tessiture.')
       }
-      await api.submitApplication(values as CreateApplicationDto)
+      await api.submitApplication(values as CreateApplicationDto, honeypot)
     },
   })
 
@@ -185,6 +211,7 @@ function CandidatureForm() {
       {form.isError && (
         <div className="form-error">{form.error}</div>
       )}
+      <HoneypotField value={honeypot} onChange={setHoneypot} />
       <div className="form-group">
         <label>Nom complet *</label>
         <input

@@ -14,12 +14,12 @@ export class ApiErrorException extends Error {
 }
 
 export const api = {
-  submitApplication: async (dto: CreateApplicationDto): Promise<void> => {
-    const { error } = await supabase.functions.invoke('submit-application', { body: dto })
+  submitApplication: async (dto: CreateApplicationDto, website = ''): Promise<void> => {
+    const { error } = await supabase.functions.invoke('submit-application', { body: { ...dto, website } })
     if (error) throw new ApiErrorException(FORM_MESSAGES.errors.generic)
   },
-  submitContact: async (dto: CreateContactDto): Promise<void> => {
-    const { error } = await supabase.functions.invoke('submit-contact', { body: dto })
+  submitContact: async (dto: CreateContactDto, website = ''): Promise<void> => {
+    const { error } = await supabase.functions.invoke('submit-contact', { body: { ...dto, website } })
     if (error) throw new ApiErrorException(FORM_MESSAGES.errors.generic)
   },
 }

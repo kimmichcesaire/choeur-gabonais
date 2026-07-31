@@ -22,7 +22,15 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const { full_name, email, phone, voice_type, experience, motivation } = await req.json()
+    const { full_name, email, phone, voice_type, experience, motivation, website } = await req.json()
+
+    // Honeypot : un bot remplit ce champ invisible pour un humain — on fait
+    // semblant que ça a marché sans rien enregistrer ni envoyer d'email.
+    if (website) {
+      return new Response(JSON.stringify({ success: true }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      })
+    }
 
     if (!full_name || !email || !motivation) {
       return new Response(JSON.stringify({ error: 'Champs obligatoires manquants' }), {
