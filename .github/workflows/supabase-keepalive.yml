@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Ping Supabase to prevent free-tier pause
         run: |
-          curl -sf "${{ secrets.SUPABASE_URL }}/rest/v1/site_settings?select=key&limit=1" \
-            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
-            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
+          curl -sf "${{ secrets.VITE_SUPABASE_URL }}/rest/v1/site_settings?select=key&limit=1" \
+            -H "apikey: ${{ secrets.VITE_SUPABASE_ANON_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.VITE_SUPABASE_ANON_KEY }}" \
             -o /dev/null
