@@ -21,10 +21,7 @@ export default function LegalPage() {
           <LegalPlaceholder>adresse du siège social</LegalPlaceholder>.
         </p>
         <p>Numéro RNA : <LegalPlaceholder>numéro RNA (format W + 9 chiffres)</LegalPlaceholder></p>
-        <p>
-          Directeur de la publication :{' '}
-          <LegalPlaceholder>nom du président ou responsable de la publication</LegalPlaceholder>
-        </p>
+        <p>Directeur de la publication : Le Président en exercice du Chœur Gabonais de France</p>
         <p>Contact : {SITE_CONFIG.contact.email}</p>
       </section>
 
