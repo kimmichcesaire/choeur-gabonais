@@ -1361,6 +1361,24 @@ section {
   background: #1877F2;
 }
 
+.footer-legal {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 20px;
+  font-size: .78rem;
+}
+
+.footer-legal a {
+  color: rgba(255, 255, 255, .5);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-legal a:hover {
+  color: rgba(255, 255, 255, .8);
+}
+
 /* ═══════════════════════════════════════════════
    UTILITIES
 ═══════════════════════════════════════════════ */

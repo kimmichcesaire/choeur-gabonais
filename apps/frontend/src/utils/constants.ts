@@ -46,6 +46,8 @@ export const ROUTES = {
     gallery: '/galerie',
     about: '/a-propos',
     contact: '/contact',
+    legal: '/mentions-legales',
+    privacy: '/confidentialite',
 } as const
 
 export const FORM_MESSAGES = {

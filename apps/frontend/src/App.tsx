@@ -7,6 +7,8 @@ import MediaPage       from './pages/MediaPage'
 import GalleryPage     from './pages/GalleryPage'
 import AboutPage       from './pages/AboutPage'
 import ContactPage     from './pages/ContactPage'
+import LegalPage       from './pages/LegalPage'
+import PrivacyPage     from './pages/PrivacyPage'
 import AdminLogin      from './pages/admin/AdminLogin'
 import AdminDashboard  from './pages/admin/AdminDashboard'
 import AdminEvents     from './pages/admin/AdminEvents'
@@ -26,6 +28,8 @@ export default function App() {
         <Route path="/galerie" element={<><Navbar /><main><GalleryPage /></main><Footer /></>} />
         <Route path="/a-propos" element={<><Navbar /><main><AboutPage /></main><Footer /></>} />
         <Route path="/contact" element={<><Navbar /><main><ContactPage /></main><Footer /></>} />
+        <Route path="/mentions-legales" element={<><Navbar /><main><LegalPage /></main><Footer /></>} />
+        <Route path="/confidentialite" element={<><Navbar /><main><PrivacyPage /></main><Footer /></>} />
 
         {/* Admin */}
         <Route path="/admin/login" element={<AdminLogin />} />

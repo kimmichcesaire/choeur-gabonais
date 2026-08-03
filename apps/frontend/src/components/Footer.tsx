@@ -1,5 +1,6 @@
+import { Link } from 'react-router-dom'
 import { useAppStore } from '../store/useAppStore'
-import { SITE_CONFIG } from '../utils/constants'
+import { ROUTES, SITE_CONFIG } from '../utils/constants'
 
 export default function Footer() {
   const settings = useAppStore((s) => s.settings)
@@ -32,6 +33,11 @@ export default function Footer() {
 
       <p>© {year} — Tous droits réservés</p>
       <p>{settings.association_email ?? 'neybernal99@gmail.com'}</p>
+
+      <div className="footer-legal">
+        <Link to={ROUTES.legal}>Mentions légales</Link>
+        <Link to={ROUTES.privacy}>Politique de confidentialité</Link>
+      </div>
     </footer>
   )
 }
