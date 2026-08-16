@@ -1,5 +1,4 @@
 import { usePageMeta } from '../hooks/usePageMeta'
-import { LegalPlaceholder } from '../components/LegalPlaceholder'
 import { SITE_CONFIG } from '../utils/constants'
 
 export default function LegalPage() {
@@ -16,11 +15,10 @@ export default function LegalPage() {
       <section>
         <h2>Éditeur du site</h2>
         <p>
-          Le site est édité par <LegalPlaceholder>nom légal complet de l'association</LegalPlaceholder>,
-          association régie par la loi du 1er juillet 1901, dont le siège social est situé{' '}
-          <LegalPlaceholder>adresse du siège social</LegalPlaceholder>.
+          Le site est édité par Chœur Gabonais de France (CGDF), association régie par la loi du 1er
+          juillet 1901, dont le siège social est situé 4 rue Lomet, 47000 Agen.
         </p>
-        <p>Numéro RNA : <LegalPlaceholder>numéro RNA (format W + 9 chiffres)</LegalPlaceholder></p>
+        <p>Numéro RNA : W953011862</p>
         <p>Directeur de la publication : Le Président en exercice du Chœur Gabonais de France</p>
         <p>Contact : {SITE_CONFIG.contact.email}</p>
       </section>

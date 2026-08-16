@@ -1,5 +1,4 @@
 import { usePageMeta } from '../hooks/usePageMeta'
-import { LegalPlaceholder } from '../components/LegalPlaceholder'
 import { SITE_CONFIG } from '../utils/constants'
 
 export default function PrivacyPage() {
@@ -16,8 +15,7 @@ export default function PrivacyPage() {
       <section>
         <h2>1. Responsable du traitement</h2>
         <p>
-          <LegalPlaceholder>nom légal complet de l'association</LegalPlaceholder>,{' '}
-          <LegalPlaceholder>adresse du siège social</LegalPlaceholder>, contact : {SITE_CONFIG.contact.email}
+          Chœur Gabonais de France (CGDF), 4 rue Lomet, 47000 Agen, contact : {SITE_CONFIG.contact.email}
         </p>
       </section>
 
