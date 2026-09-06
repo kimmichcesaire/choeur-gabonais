@@ -1,0 +1,28 @@
+name: Maintenance reminder
+
+on:
+  schedule:
+    - cron: '0 9 1 1,4,7,10 *'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open a maintenance check-in issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --repo "${{ github.repository }}" \
+            --title "Point de maintenance trimestriel" \
+            --body "Rappel automatique (tous les 3 mois) pour vérifier :
+          - [ ] \`npm outdated\` dans apps/frontend et apps/backend — mettre à jour si des correctifs de sécurité sont disponibles
+          - [ ] Quotas gratuits : Supabase, Resend, Cloudflare (bande passante, stockage, emails envoyés)
+          - [ ] Le site répond bien sur https://choeurgabonaisdefrance.fr
+          - [ ] Les formulaires (contact, candidature) fonctionnent toujours
+
+          Fermer cette issue une fois la vérification faite."
