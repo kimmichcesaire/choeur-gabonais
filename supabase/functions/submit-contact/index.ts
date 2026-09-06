@@ -5,7 +5,7 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
 
-const ADMIN_EMAIL = 'neybernal99@gmail.com'
+const ADMIN_EMAIL = 'choeurgabonais.france@gmail.com'
 const CHOIR_NAME = 'Chœur Gabonais de France'
 
 Deno.serve(async (req) => {

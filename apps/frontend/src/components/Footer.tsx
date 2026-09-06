@@ -32,7 +32,7 @@ export default function Footer() {
       </div>
 
       <p>© {year} — Tous droits réservés</p>
-      <p>{settings.association_email ?? 'neybernal99@gmail.com'}</p>
+      <p>{settings.association_email ?? 'choeurgabonais.france@gmail.com'}</p>
 
       <div className="footer-legal">
         <Link to={ROUTES.legal}>Mentions légales</Link>

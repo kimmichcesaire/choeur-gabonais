@@ -6,7 +6,7 @@ export const SITE_CONFIG = {
     name: 'Chœur Gabonais de France',
     description: 'Association culturelle et musicale gabonaise',
     contact: {
-        email: 'neybernal99@gmail.com',
+        email: 'choeurgabonais.france@gmail.com',
         location: 'Paris, France',
         rehearsal: {
             day: 'samedi',

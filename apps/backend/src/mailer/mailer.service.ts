@@ -23,7 +23,7 @@ export class MailerService {
 
   constructor(config: ConfigService) {
     this.resend = new Resend(config.get('RESEND_API_KEY'))
-    this.adminEmail = config.get('ADMIN_EMAIL', 'neybernal99@gmail.com')
+    this.adminEmail = config.get('ADMIN_EMAIL', 'choeurgabonais.france@gmail.com')
     this.from = config.get('MAILER_FROM', 'Choeur Gabonais <onboarding@resend.dev>')
   }
 
