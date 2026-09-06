@@ -2,6 +2,9 @@ node_modules
 dist
 *.log
 
+# Cache local de la CLI Supabase (généré par `supabase link`)
+supabase/.temp
+
 # Fichiers d'environnement — NE JAMAIS committer
 .env
 .env.*
